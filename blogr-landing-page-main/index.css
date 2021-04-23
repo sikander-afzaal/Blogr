@@ -1,0 +1,794 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+:root {
+  --Very-dark-gray-blue: hsl(237, 17%, 21%);
+  --Very-dark-grayish-blue: hsl(207, 13%, 34%);
+  --Very-dark-desaturated-blue: hsl(237, 23%, 32%);
+  --Very-light-red: hsl(13, 100%, 72%);
+  --light-red: hsl(353, 100%, 62%);
+  --footer-background: hsl(240, 10%, 16%);
+  --footer-text: hsl(240, 2%, 79%);
+  --CTA-text: hsl(356, 100%, 66%);
+  --CTA-hover-background: hsl(355, 100%, 74%);
+  --heading: hsl(208, 49%, 24%);
+}
+body {
+  overflow-x: hidden;
+}
+/* hero section-------------------------------------- */
+.hero {
+  position: relative;
+  height: 70vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    to right,
+    var(--Very-light-red),
+    var(--light-red)
+  );
+  border-bottom-left-radius: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero::after {
+  content: "";
+  background-image: url("./images/bg-pattern-intro.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center;
+  z-index: 1;
+}
+.hero > * {
+  z-index: 100;
+}
+/* nav-bar--------------------------------- */
+header {
+  align-self: flex-start;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  width: 100vw;
+  height: 10vh;
+  align-items: center;
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 20vw;
+  align-items: center;
+}
+.nav-anchor {
+  text-decoration: none;
+  color: white;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.nav-anchor:hover {
+  border-bottom: 2px solid white;
+}
+/* navbar-button----------------------------- */
+.Login-btn {
+  background-color: transparent;
+  color: white;
+  border-radius: 100px;
+  padding: 17px 44px;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  transition: all 0.65s ease;
+  font-size: 17px;
+}
+.Sign-up-btn {
+  padding: 17px 44px;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 100px;
+  background-color: white;
+  color: var(--light-red);
+  transition: all 0.65s ease;
+}
+.Sign-up-btn:hover {
+  background-color: var(--CTA-hover-background);
+  color: white;
+}
+.Login-btn:hover {
+  background-color: white;
+  color: var(--light-red);
+}
+/* Middle part of hero---------------------------------------- */
+.middle-section {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  bottom: 11rem;
+}
+.hero-h1 {
+  font-size: 60px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+.hero-h3 {
+  font-size: 20px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 300;
+  color: white;
+}
+.Start-for-free-btn {
+  padding: 17px 44px;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 100px;
+  background-color: white;
+  color: var(--light-red);
+  transition: all 0.65s ease;
+}
+.Learn-more-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 100px;
+  padding: 17px 44px;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  transition: all 0.65s ease;
+  font-size: 17px;
+}
+
+.Learn-more-btn:hover {
+  background-color: white;
+  color: var(--light-red);
+}
+.Start-for-free-btn:hover {
+  background-color: var(--CTA-hover-background);
+  color: white;
+}
+.hero-mid-btns {
+  margin-top: 5rem;
+}
+/*DropDown Product-----------------------------------------*/
+.Product-dropdown {
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2.5px 2.5px 10px hsl(207, 13%, 34%);
+  top: 5rem;
+  left: 40rem;
+}
+.product-drop-ul {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 20px;
+}
+.product-drop-li {
+  padding: 10px 0px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  color: var(--Very-dark-desaturated-blue);
+}
+.rotate {
+  transform: rotate(180deg);
+}
+.trans {
+  transition: all 0.25s ease;
+}
+/*DropDown Company-----------------------------------------*/
+.Company-dropdown {
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2.5px 2.5px 10px hsl(207, 13%, 34%);
+  top: 5rem;
+  left: 48rem;
+}
+.company-drop-ul {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 20px;
+}
+.company-drop-li {
+  padding: 10px 0px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  color: var(--Very-dark-desaturated-blue);
+}
+/*DropDown Connect-----------------------------------------*/
+.Connect-dropdown {
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2.5px 2.5px 10px hsl(207, 13%, 34%);
+  top: 5rem;
+  left: 56rem;
+}
+.connect-drop-ul {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 20px;
+}
+.connect-drop-li {
+  padding: 10px 0px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  color: var(--Very-dark-desaturated-blue);
+  cursor: pointer;
+}
+/*DropDown Animation-----------------------------------------*/
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.fade-in {
+  animation: fadeIn 0.2s ease-in 1 forwards;
+  opacity: 0;
+}
+.fade-out {
+  animation: fadeOut 0.2s ease-in 1 forwards;
+  opacity: 1;
+}
+.connect-drop-li:hover,
+.company-drop-li:hover,
+.product-drop-li:hover {
+  color: var(--Very-dark-gray-blue);
+  font-weight: 700;
+}
+/*Hero Main-----------------------------------------*/
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 9rem;
+}
+.h1-main {
+  color: var(--Very-dark-desaturated-blue);
+  font-size: 40px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+}
+.central-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  overflow-x: hidden;
+  height: 71vh;
+}
+.text-part {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.image-control {
+  width: 100%;
+  flex: 2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.editor {
+  overflow-x: hidden;
+  position: absolute;
+  max-width: 66%;
+}
+.text-part-h1 {
+  color: var(--Very-dark-desaturated-blue);
+  font-size: 24px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.text-part-p {
+  color: var(--Very-dark-grayish-blue);
+  font-size: 15px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  line-height: 37px;
+}
+.upper-text {
+  margin-bottom: 20px;
+  width: 61%;
+}
+.bottom-text {
+  width: 61%;
+}
+/*Mid Main-----------------------------------------*/
+.mid-main {
+  background-image: linear-gradient(
+    to right,
+    var(--Very-dark-gray-blue),
+    var(--Very-dark-desaturated-blue)
+  );
+  height: 40vh;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.mid-main::before {
+  content: "";
+  background-image: url("./images/bg-pattern-circles.svg");
+  position: absolute;
+  width: 100vw;
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.bg-images {
+  background-image: url(./images/illustration-phones.svg);
+  position: absolute;
+  width: 89vw;
+  height: 59vh;
+  background-repeat: no-repeat;
+  background-position: 1% bottom;
+}
+.mid-text {
+  width: 30vw;
+  margin-right: 13rem;
+}
+.mid-h1 {
+  font-size: 38px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+.mid-para {
+  font-family: "Overpass", sans-serif;
+  font-weight: 300;
+  line-height: 37px;
+  color: white;
+  width: 85%;
+  font-size: 15px;
+  padding-top: 16px;
+}
+/*Features-----------------------------------------*/
+.features {
+  display: flex;
+  margin-top: 15rem;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+.images-fea {
+  position: relative;
+  flex: 1;
+  height: 100%;
+}
+.fea-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100%;
+}
+.desktop-laptop {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: -16rem;
+  top: -5rem;
+}
+/*Footer-----------------------------------------*/
+footer {
+  background-color: var(--footer-background);
+  margin-top: 18rem;
+  border-top-right-radius: 160px;
+  display: flex;
+  height: 43vh;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.flex,
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 29vh;
+}
+.foot-h1 {
+  color: var(--footer-text);
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+.foot-anchor {
+  color: var(--footer-text);
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+.logo-foot {
+  align-self: flex-start;
+  margin-top: 4rem;
+}
+.foot-anchor:hover {
+  text-decoration: underline;
+}
+
+.desktop {
+  display: block;
+}
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 544px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  header {
+    justify-content: space-around;
+  }
+  /* Middle part of hero---------------------------------------- */
+  .middle-section {
+    display: flex;
+    position: static;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    bottom: 11rem;
+  }
+  .hero-h1 {
+    padding: 3px 6px;
+    font-size: 41px;
+  }
+  .hero-h3 {
+    font-size: 21px;
+    padding: 0px 10px;
+  }
+  .Start-for-free-btn {
+    padding: 16px 32px;
+  }
+  .Learn-more-btn {
+    padding: 16px 32px;
+  }
+  .box {
+    position: absolute;
+    z-index: 102;
+    height: auto;
+    top: 16rem;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+      0 100px 80px rgba(0, 0, 0, 0.12);
+    flex-direction: column;
+  }
+  .close {
+    display: none;
+  }
+  .overlay {
+    height: 90vh;
+    width: 100vw;
+    position: absolute;
+    background-image: linear-gradient(
+      to right,
+      var(--Very-light-red),
+      var(--light-red)
+    );
+    z-index: 101;
+    border-bottom-left-radius: 200px;
+  }
+  .nav-anchor-mobile {
+    text-decoration: none;
+    color: var(--Very-dark-gray-blue);
+    font-family: "Overpass", sans-serif;
+    font-weight: 600;
+    padding: 10px 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+  }
+  .mobile-box {
+    width: 80vw;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  header {
+    z-index: 102 !important;
+  }
+  .Sign-up-btn-mobile {
+    padding: 17px 44px;
+    text-decoration: none;
+    font-family: "Overpass", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    border-radius: 100px;
+    background-image: linear-gradient(
+      to right,
+      var(--Very-light-red),
+      var(--light-red)
+    );
+    color: white;
+  }
+  .Login-btn-mobile {
+    background-color: transparent;
+    color: var(--Very-dark-gray-blue);
+    border-radius: 100px;
+    padding: 17px 44px;
+    text-decoration: none;
+    font-family: "Overpass", sans-serif;
+    font-weight: 600;
+    transition: all 0.65s ease;
+    font-size: 20px;
+  }
+  .line {
+    margin-top: 30px;
+    width: 90%;
+    height: 1px;
+    opacity: 0.4;
+    background-color: var(--Very-dark-grayish-blue);
+  }
+  .sign-in-btns-mobile {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .dropdown-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-drop-links {
+    color: var(--Very-dark-grayish-blue);
+    font-family: "Overpass", sans-serif;
+    font-weight: 600;
+    padding: 5px;
+  }
+  .drop-box {
+    background-color: rgba(200, 200, 203, 0.3);
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  .open {
+    display: flex;
+  }
+  /* Hero Main ---------------------------------------- */
+  .hero-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9rem;
+    height: auto;
+    overflow: visible;
+  }
+  .h1-main {
+    font-size: 44px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .central-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    overflow-x: hidden;
+    height: auto;
+    flex-direction: column;
+  }
+  .text-part {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-part-h1 {
+    color: var(--Very-dark-desaturated-blue);
+    font-size: 27px;
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .text-part-p {
+    color: var(--Very-dark-grayish-blue);
+    font-size: 16px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    line-height: 37px;
+    text-align: center;
+    padding: 0;
+  }
+  .upper-text {
+    margin-bottom: 20px;
+    width: 61%;
+  }
+  .bottom-text {
+    width: 61%;
+  }
+  .mobile-img {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  /*Mid Main---------------------------------------- */
+  .mid-main {
+    background-image: linear-gradient(
+      to right,
+      var(--Very-dark-gray-blue),
+      var(--Very-dark-desaturated-blue)
+    );
+    height: auto;
+    border-bottom-left-radius: 200px;
+    border-top-right-radius: 100px;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 12rem;
+  }
+  .mid-main::before {
+    content: "";
+    background-image: url("./images/bg-pattern-circles.svg");
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center 154%;
+    z-index: 1;
+  }
+  .bg-images {
+    background-image: none;
+    position: static;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: 1% bottom;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .phone {
+    position: absolute;
+    width: 100%;
+    top: -9rem;
+  }
+  .mid-text {
+    width: 100vw;
+    margin-right: 0;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    top: -6rem;
+  }
+  .mid-para {
+    width: 100vw;
+    font-size: 18px;
+    padding: 0px 20px;
+    padding-top: 16px;
+  }
+  /*Features-----------------------------------------*/
+  .features {
+    display: flex;
+    margin-top: 5rem;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100vw;
+    flex-direction: column;
+    margin-bottom: 0rem;
+  }
+  .images-fea {
+    position: static;
+    flex: none;
+    height: 100%;
+    width: 100vw;
+    margin-bottom: 3rem;
+  }
+  .fea-text {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .desktop-laptop {
+    position: static;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  .upper-text,
+  .bottom-text {
+    width: 80vw;
+  }
+  /*Footer-----------------------------------------*/
+  footer {
+    background-color: var(--footer-background);
+    margin-top: 4rem;
+    border-top-right-radius: 160px;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .flex,
+  .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .flex {
+    height: auto;
+  }
+  .foot-h1 {
+    color: var(--footer-text);
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 20px 0px;
+  }
+  .foot-anchor {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+  }
+  .logo-foot {
+    align-self: center;
+    margin: 4rem 0px;
+  }
+  .col-1 .list .foot-anchor {
+    padding: 10px 0px;
+  }
+  .col-3 .list {
+    justify-content: space-evenly;
+  }
+  .col-1 {
+    margin-bottom: 20px;
+  }
+}
