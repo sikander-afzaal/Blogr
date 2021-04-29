@@ -22,7 +22,7 @@ body {
 /* hero section-------------------------------------- */
 .hero {
   position: relative;
-  height: 70vh;
+  height: 75vh;
   width: 100vw;
   background-image: linear-gradient(
     to right,
@@ -459,6 +459,9 @@ footer {
   }
   header {
     justify-content: space-around;
+  }
+  .hero {
+    height: 100vh;
   }
   /* Middle part of hero---------------------------------------- */
   .middle-section {

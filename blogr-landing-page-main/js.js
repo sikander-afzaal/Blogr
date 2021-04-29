@@ -102,3 +102,4 @@ connectMobile.addEventListener("click", () => {
   document.querySelector(".dropdown-mobile-product").classList.remove("open");
   document.querySelector("#product-mobile-arrow").classList.remove("rotate");
 });
+AOS.init();
